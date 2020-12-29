@@ -1,19 +1,19 @@
-module tb_segment7;
+module testbench;
 
-    reg [3:0] bcd;
+  reg [3:0] num;
     wire [6:0] seg;
     integer i;
-
-    segment7 uut (
-        .bcd(bcd), 
+  
+    seven_segment uut (
+        .num(num), 
         .seg(seg)
     );
 
     initial begin
-      for(i = 0;i < 16000;i = i+1000) 
+      for(i = 0;i < 10000;i = i+1000)
         begin
-            bcd = i/1000; 
-            #10; 
+            num = i/1000; 
+            #10; //wait for 10 ns
         end     
     end
       
