@@ -1,16 +1,16 @@
-module segment7(
-     bcd,
+module seven_segment(
+     num,
      seg
     );
      
-     input [3:0] bcd;
+  	input [3:0] num;
      output [6:0] seg;
      reg [6:0] seg;
 
 //always block for converting bcd digit into 7 segment format
-    always @(bcd)
+    always @(num)
     begin
-        case (bcd) 
+        case (num) 
             0 : seg = 7'b0000001;
             1 : seg = 7'b1001111;
             2 : seg = 7'b0010010;
